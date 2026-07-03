@@ -1,0 +1,26 @@
+{
+  "name": "spotifytracker",
+  "version": "1.0.0",
+  "description": "Spotify tracker monorepo",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "bun run --filter '*' dev",
+    "dev:web": "bun run --filter @spotifytracker/web dev",
+    "dev:api": "bun run --filter @spotifytracker/api dev",
+    "build": "bun run --filter '*' build",
+    "typecheck": "bun run --filter '*' typecheck",
+    "db:generate": "bun run --filter @spotifytracker/db generate",
+    "db:migrate": "bun run --filter @spotifytracker/db migrate",
+    "db:push": "bun run --filter @spotifytracker/db push",
+    "db:studio": "bun run --filter @spotifytracker/db studio"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.14",
+    "typescript": "^5.5.3"
+  }
+}
